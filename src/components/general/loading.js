@@ -1,12 +1,12 @@
 import React from 'react';
 import ErrorPage from './error-page';
-import loadingGif from '../../imgs/loading.gif';
+import LoadingGif from '../../imgs/loading.gif';
 import '../../styles/general/page-gifs.css';
 
 const Loading = ({ isLoading, error }) => {
   // handle the loading state
   if (isLoading) {
-    return <img src={loadingGif} alt="" className="FullPageGifs" />;
+    return <img src={LoadingGif} alt="" className="full-page-gifs" />;
   } else if (error) {
     // handle the error state
     return <ErrorPage />;
