@@ -3,7 +3,7 @@ import ErrorPage from './error-page';
 import LoadingGif from '../../imgs/loading.gif';
 import '../../styles/general/page-gifs.css';
 
-const Loading = ({ isLoading, error }) => {
+function Loading({ isLoading, error }) {
   // handle the loading state
   if (isLoading) {
     return <img src={LoadingGif} alt="" className="full-page-gifs" />;
@@ -13,6 +13,6 @@ const Loading = ({ isLoading, error }) => {
   } else {
     return null;
   }
-};
+}
 
 export default Loading;

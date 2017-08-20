@@ -3,7 +3,8 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Loadable from 'react-loadable';
 import Loading from './general/loading';
 import { Provider } from 'react-redux';
-import Home from './home';
+
+import HomeStore from './home-store';
 
 const PageDoesNotExist = Loadable({
   loader: () => import('./general/page-does-not-exist'),
@@ -21,7 +22,7 @@ class AppRoot extends Component {
       <Provider store={this.store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={Home} />
+            <Route exact path="/" component={HomeStore} />
             <Route component={PageDoesNotExist} />
           </Switch>
         </BrowserRouter>

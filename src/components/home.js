@@ -3,7 +3,7 @@ import logo from '../imgs/logo.svg';
 import { Link } from 'react-router-dom';
 import '../styles/home.css';
 
-const Home = () => {
+function Home(props) {
   return (
     <div className="home">
       <div className="home-header">
@@ -14,8 +14,15 @@ const Home = () => {
         <Link to="/editor" />
         To get started, edit <code>src/App.js</code> and save to reload.
       </p>
+      <button
+        onClick={() => {
+          props.onClick();
+        }}
+      >
+        Test
+      </button>
     </div>
   );
-};
+}
 
 export default Home;

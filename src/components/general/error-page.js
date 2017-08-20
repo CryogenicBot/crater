@@ -1,7 +1,7 @@
 import React from 'react';
 
-const ErrorPage = () => {
+function ErrorPage() {
   return <div>There was some unforseen error :(</div>;
-};
+}
 
 export default ErrorPage;

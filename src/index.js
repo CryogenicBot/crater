@@ -6,7 +6,7 @@ import AppRoot from './components/app-root';
 import rootReducer from './reducers/root-reducer';
 import { createStore } from 'redux';
 
-const initialState = {};
+const initialState = 0;
 
 function configureStore() {
   const store = createStore(rootReducer, initialState);
