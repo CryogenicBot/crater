@@ -1,14 +1,14 @@
 import { connect } from 'react-redux';
 import Home from './home';
 
-function mapStateToProps(state) {
+function mapStateToProps(state: any) {
   console.log(state);
   return {
     counter: state
   };
 }
 
-function mapDispatchToProps(dispatch) {
+function mapDispatchToProps(dispatch: any) {
   return {
     onClick: () => {
       dispatch({ type: 'INCREMENT' });

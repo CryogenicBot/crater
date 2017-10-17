@@ -1,5 +1,5 @@
-import React from 'react';
-import NoPage from '../../imgs/404.gif';
+import * as React from 'react';
+const NoPage = require('../../imgs/404.gif');
 import '../../styles/general/page-gifs.css';
 
 function ErrorPage() {

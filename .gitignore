@@ -9,16 +9,12 @@
 # production
 /build
 
-# null dev folder for personal docs
-/null_dev
-
 # misc
 .DS_Store
 .env.local
 .env.development.local
 .env.test.local
 .env.production.local
-.vscode
 
 npm-debug.log*
 yarn-debug.log*
