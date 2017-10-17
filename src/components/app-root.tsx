@@ -1,5 +1,5 @@
 import * as React from 'react';
-import { Component} from "react";
+import { Component } from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { Provider } from 'react-redux';
 import { createStore } from 'redux';
@@ -12,13 +12,12 @@ import rootReducer from '../reducers/root-reducer';
 const initialState = 0;
 const store = createStore(rootReducer, initialState);
 
-
 const PageDoesNotExist = Loadable({
-  loader:() => import('./general/page-does-not-exist') ,
+  loader: () => import('./general/page-does-not-exist'),
   loading: Loading
 });
 
-class AppRoot extends Component{
+class AppRoot extends Component {
   constructor() {
     super();
   }
@@ -38,4 +37,3 @@ class AppRoot extends Component{
 }
 
 export default AppRoot;
-

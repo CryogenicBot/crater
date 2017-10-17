@@ -2,8 +2,9 @@ import * as React from 'react';
 const logo = require('../imgs/logo.svg');
 import { Link } from 'react-router-dom';
 import '../styles/home.css';
+import { HomeProps } from './home-state';
 
-function Home(props:any) {
+function Home(props: HomeProps) {
   return (
     <div className="home">
       <div className="home-header">

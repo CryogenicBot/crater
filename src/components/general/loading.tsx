@@ -1,6 +1,6 @@
 import * as React from 'react';
 // const LoadingGif = require('../../imgs/loading.gif');
-import {LoadingComponentProps} from 'react-loadable';
+import { LoadingComponentProps } from 'react-loadable';
 import '../../styles/general/page-gifs.css';
 
 class LoadingComponent extends React.Component<LoadingComponentProps> {
