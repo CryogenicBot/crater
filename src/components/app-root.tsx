@@ -5,11 +5,18 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import Loadable from 'react-loadable';
 
-import HomeStore from './home-state';
+import Home from './home';
 import Loading from './general/loading';
 import rootReducer from '../reducers/root-reducer';
 
-const initialState = 0;
+export interface AppState {
+  selectedMonth: string;
+}
+
+const initialState: AppState = {
+  selectedMonth: 'Jan'
+};
+
 const store = createStore(rootReducer, initialState);
 
 const PageDoesNotExist = Loadable({
@@ -27,7 +34,7 @@ class AppRoot extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact path="/" component={HomeStore} />
+            <Route exact={true} path="/" component={Home} />
             <Route component={PageDoesNotExist} />
           </Switch>
         </BrowserRouter>

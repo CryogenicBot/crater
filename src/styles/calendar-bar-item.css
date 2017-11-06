@@ -1,0 +1,19 @@
+.selected-calendar-bar-item {
+  background-color: #fd9393;
+}
+
+.selected-calendar-bar-item:hover{
+  background-color: #ff5757;
+}
+
+.calendar-bar-item{
+  background-color: white;  
+}
+
+.calendar-bar-item:hover{
+  background-color: #ffd0da;
+}
+
+.calendar-bar-item:active, .selected-calendar-bar-item:active{
+  background-color: #ff1818;
+}

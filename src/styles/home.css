@@ -16,14 +16,16 @@ body {
 }
 
 .home-header {
-  background-color: #222;
   height: 150px;
   padding: 20px;
-  color: white;
 }
 
 .home-intro {
   font-size: large;
+}
+
+#para{
+  background-color: #ffffff;
 }
 
 @keyframes home-logo-spin {
