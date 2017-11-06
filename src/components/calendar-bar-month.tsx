@@ -1,15 +1,15 @@
 import * as React from 'react';
 import { Component } from 'react';
-import '../styles/calendar-bar-item.css';
+import '../styles/calendar-bar-month.css';
 
-export interface CalendarBarItemProps {
+export interface CalendarBarMonthProps {
   month: string;
   selectedMonth: string;
   chooseMonth: Function;
 }
 
-class CalendarBarItem extends Component<CalendarBarItemProps, {}> {
-  constructor(props: CalendarBarItemProps) {
+class CalendarBarMonth extends Component<CalendarBarMonthProps, {}> {
+  constructor(props: CalendarBarMonthProps) {
     super(props);
   }
 
@@ -18,8 +18,8 @@ class CalendarBarItem extends Component<CalendarBarItemProps, {}> {
       <li
         className={
           this.props.selectedMonth === this.props.month
-            ? 'selected-calendar-bar-item'
-            : 'calendar-bar-item'
+            ? 'selected-calendar-bar-month'
+            : 'calendar-bar-month'
         }
         onClick={() => {
           this.props.chooseMonth(this.props.month);
@@ -31,4 +31,4 @@ class CalendarBarItem extends Component<CalendarBarItemProps, {}> {
   }
 }
 
-export default CalendarBarItem;
+export default CalendarBarMonth;

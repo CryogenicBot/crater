@@ -1,0 +1,19 @@
+.selected-calendar-bar-month {
+  background-color: #fd9393;
+}
+
+.selected-calendar-bar-month:hover{
+  background-color: #ff5757;
+}
+
+.calendar-bar-month{
+  background-color: white;  
+}
+
+.calendar-bar-month:hover{
+  background-color: #ffd0da;
+}
+
+.calendar-bar-month:active, .selected-calendar-bar-month:active{
+  background-color: #ff1818;
+}

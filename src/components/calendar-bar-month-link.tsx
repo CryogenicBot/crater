@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import CalendarBarItem from './calendar-bar-item';
+import CalendarBarMonth from './calendar-bar-month';
 import { Dispatch, AnyAction } from 'redux';
 import { chooseMonth } from '../actions';
 import { AppState } from './app-root';
@@ -19,8 +19,8 @@ function mapDispatchToProps(dispatch: Dispatch<AnyAction>) {
   return props;
 }
 
-const CalendarBarItemLink = connect(mapStateToProps, mapDispatchToProps)(
-  CalendarBarItem
+const CalendarBarMonthLink = connect(mapStateToProps, mapDispatchToProps)(
+  CalendarBarMonth
 );
 
-export default CalendarBarItemLink;
+export default CalendarBarMonthLink;

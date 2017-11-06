@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { Component } from 'react';
 import '../styles/calendar-bar.css';
-import CalendarBarItemLink from './calendar-bar-item-link';
+import CalendarBarMonthLink from './calendar-bar-month-link';
 
 export interface CalendarProps {
   months: string[];
@@ -17,7 +17,7 @@ class CalendarBar extends Component<CalendarProps, {}> {
       <div className="calendar-container">
         <ul className="calendar-list">
           {this.props.months.map(month => {
-            return <CalendarBarItemLink key={month} month={month} />;
+            return <CalendarBarMonthLink key={month} month={month} />;
           })}
         </ul>
       </div>
