@@ -14,6 +14,3 @@ export function chooseMonth(monthChosen: string) {
 
   return action;
 }
-// create actions
-
-// create action creators
