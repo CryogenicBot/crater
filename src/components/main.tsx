@@ -4,7 +4,7 @@ const logo = require('../imgs/logo.svg');
 import { Link } from 'react-router-dom';
 import CalendarBar from './calendar-bar';
 
-function Home() {
+function Main() {
   const monthList: string[] = [
     'Jan',
     'Feb',
@@ -35,4 +35,4 @@ function Home() {
   );
 }
 
-export default Home;
+export default Main;

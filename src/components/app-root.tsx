@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import Loadable from 'react-loadable';
 
-import Home from './home';
+import Main from './main';
 import Loading from './general/loading';
 import rootReducer from '../reducers/root-reducer';
 
@@ -34,7 +34,7 @@ class AppRoot extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact={true} path="/" component={Home} />
+            <Route exact={true} path="/" component={Main} />
             <Route component={PageDoesNotExist} />
           </Switch>
         </BrowserRouter>
