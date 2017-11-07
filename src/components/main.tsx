@@ -26,7 +26,10 @@ class Main extends React.Component {
         <CalendarBar months={monthList} />
         <div className="content-container">
           <div className="left-column">
-            <InputColumn />
+            <InputColumn
+              categoryPlaceholder={'what did you spend your money on?'}
+              valuePlaceholder={50}
+            />
           </div>
           <div className="right-column">
             <StatsColumn />
