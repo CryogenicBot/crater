@@ -1,6 +1,8 @@
 import '../styles/main.css';
 import * as React from 'react';
 import CalendarBar from './calendar-bar';
+import StatsColumn from './stats-column';
+import InputColumn from './input-column';
 
 const monthList: string[] = [
   'Jan',
@@ -20,8 +22,16 @@ const monthList: string[] = [
 class Main extends React.Component {
   render() {
     return (
-      <div className="home">
+      <div>
         <CalendarBar months={monthList} />
+        <div className="content-container">
+          <div className="left-column">
+            <InputColumn />
+          </div>
+          <div className="right-column">
+            <StatsColumn />
+          </div>
+        </div>
       </div>
     );
   }

@@ -1,0 +1,20 @@
+.input-form {
+  padding: 20px 20px 20px 20px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.submit-button {
+  margin: 50px 10px 10px 10px;
+  max-width: 80px;
+}
+
+.inputs {
+  margin-left: 20px;
+}
+
+.labels {
+  font-size: medium;
+  padding-top: 50px;
+}

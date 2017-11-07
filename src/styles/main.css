@@ -6,3 +6,31 @@ body {
   background-color: white;
 }
 
+.content-container {
+  display: flex;
+  flex-flow: row;
+}
+
+.left-column {
+  flex: 1 1 0;
+}
+
+.right-column {
+  flex: 2 1 0;
+}
+
+@media all and (max-width: 800px) {
+  
+  .content-container {
+    display: flex;
+    flex-flow: column;
+  }
+
+  .left-column {
+    flex: 1 1 0;
+  }
+  
+  .right-column {
+    flex: 1 1 0;
+  }
+}
