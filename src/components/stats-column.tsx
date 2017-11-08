@@ -1,11 +1,10 @@
 import * as React from 'react';
+import { VictoryPie } from 'victory';
 
 class StatsColumn extends React.Component {
   render() {
     return (
-      <div>
-        <p>something</p>
-      </div>
+      <VictoryPie />
     );
   }
 }
