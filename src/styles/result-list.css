@@ -1,0 +1,10 @@
+.result-list {
+  position: absolute;
+  display: block;
+  margin-top: 5.5em;
+  background-color: white;
+  border-radius: 0.4em;
+  box-shadow: 0 2px 4px 2px rgba(0, 0, 0, 0.25);
+  min-width: 20em;
+  display: none;
+}

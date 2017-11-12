@@ -1,19 +1,26 @@
+.selected-calendar-bar-month,
+.calendar-bar-month {
+  list-style-type: none;
+  flex: 0 0 6.5em;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  text-align: center;
+  border-radius: 0.2em;
+  transition: border-bottom ease-out 0.2s, background-color ease-out 0.2s,
+    padding-bottom ease-out 0.2s;
+}
+
 .selected-calendar-bar-month {
-  background-color: #fd9393;
+  padding-bottom: 1.6em;
+  border-bottom: 0.4em solid red;
 }
 
-.selected-calendar-bar-month:hover{
-  background-color: #ff5757;
+.selected-calendar-bar-month:hover,
+.calendar-bar-month:hover {
+  background-color: rgba(0, 0, 0, 0.2);
 }
 
-.calendar-bar-month{
-  background-color: white;  
-}
-
-.calendar-bar-month:hover{
-  background-color: #ffd0da;
-}
-
-.calendar-bar-month:active, .selected-calendar-bar-month:active{
-  background-color: #ff1818;
+.calendar-bar-month:active,
+.selected-calendar-bar-month:active {
+  background-color: rgba(0, 0, 0, 0.3);
 }

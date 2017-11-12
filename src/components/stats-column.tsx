@@ -3,9 +3,7 @@ import { VictoryPie } from 'victory';
 
 class StatsColumn extends React.Component {
   render() {
-    return (
-      <VictoryPie />
-    );
+    return <VictoryPie />;
   }
 }
 

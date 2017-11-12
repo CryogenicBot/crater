@@ -1,5 +1,6 @@
 import * as React from 'react';
 import '../styles/input-column.css';
+import ResultList from './result-list';
 
 export interface InputState {
   category: string;
@@ -16,7 +17,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
     super(props);
     this.state = {
       category: '',
-      value: 0,
+      value: 0
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -56,6 +57,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
             placeholder={this.props.categoryPlaceholder}
             onChange={this.handleChange}
           />
+          <ResultList />
         </label>
         <label className="labels">
           How much?
@@ -68,7 +70,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
             onChange={this.handleChange}
           />
         </label>
-        <input className="submit-button" type="submit" value="Submit" />
+        <input className="submit-button" type="submit" value="SUBMIT" />
       </form>
     );
   }
