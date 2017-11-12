@@ -27,8 +27,8 @@ class Main extends React.Component {
         <div className="content-container">
           <div className="left-column">
             <InputColumn
-              categoryPlaceholder={'what did you spend your money on?'}
-              valuePlaceholder={50}
+              categoryPlaceholder={'What did you spend your money on?'}
+              valuePlaceholder={'How much did you spend?'}
             />
           </div>
           <div className="right-column">

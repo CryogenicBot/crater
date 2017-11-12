@@ -4,12 +4,12 @@ import ResultList from './result-list';
 
 export interface InputState {
   category: string;
-  value: number;
+  value: string;
 }
 
 export interface InputProps {
   categoryPlaceholder: string;
-  valuePlaceholder: number;
+  valuePlaceholder: string;
 }
 
 class InputColumn extends React.Component<InputProps, InputState> {
@@ -17,31 +17,27 @@ class InputColumn extends React.Component<InputProps, InputState> {
     super(props);
     this.state = {
       category: '',
-      value: 0
+      value: ''
     };
-    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.handleCategoryChange = this.handleCategoryChange.bind(this);
+    this.handleMoneyChange = this.handleMoneyChange.bind(this);
   }
 
   handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
   }
 
-  handleChange(event: React.FormEvent<HTMLInputElement>) {
-    switch (event.currentTarget.name) {
-      case 'categorySpentIn':
-        this.setState({
-          category: event.currentTarget.value
-        });
-        break;
-      case 'moneySpent':
-        this.setState({
-          value: parseFloat(event.currentTarget.value)
-        });
-        break;
-      default:
-        this.setState({});
-    }
+  handleCategoryChange(event: React.FormEvent<HTMLInputElement>) {
+    this.setState({
+      category: event.currentTarget.value
+    });
+  }
+
+  handleMoneyChange(event: React.FormEvent<HTMLInputElement>) {
+    this.setState({
+      value: event.currentTarget.value
+    });
   }
 
   render() {
@@ -55,7 +51,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
             type="text"
             value={this.state.category}
             placeholder={this.props.categoryPlaceholder}
-            onChange={this.handleChange}
+            onChange={this.handleCategoryChange}
           />
           <ResultList />
         </label>
@@ -66,8 +62,8 @@ class InputColumn extends React.Component<InputProps, InputState> {
             className="inputs"
             type="text"
             value={this.state.value}
-            placeholder={this.props.valuePlaceholder.toFixed(2).toString()}
-            onChange={this.handleChange}
+            placeholder={this.props.valuePlaceholder}
+            onChange={this.handleMoneyChange}
           />
         </label>
         <input className="submit-button" type="submit" value="SUBMIT" />
