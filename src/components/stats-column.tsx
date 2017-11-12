@@ -1,7 +1,12 @@
 import * as React from 'react';
 import { VictoryPie } from 'victory';
 
-class StatsColumn extends React.Component {
+export interface StatsProps {}
+
+class StatsColumn extends React.Component<StatsProps, {}> {
+  constructor(props: StatsProps) {
+    super(props);
+  }
   render() {
     return <VictoryPie />;
   }

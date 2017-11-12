@@ -13,8 +13,23 @@ export interface AppState {
   selectedMonth: string;
 }
 
+const monthList: string[] = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec'
+];
+
 const initialState: AppState = {
-  selectedMonth: 'Jan'
+  selectedMonth: monthList[new Date().getMonth()]
 };
 
 const store = createStore(rootReducer, initialState);
@@ -34,7 +49,7 @@ class AppRoot extends Component {
       <Provider store={store}>
         <BrowserRouter>
           <Switch>
-            <Route exact={true} path="/" component={Main} />
+            <Route exact={true} path="/" component={() => <Main monthList={monthList}/>}/>
             <Route component={PageDoesNotExist} />
           </Switch>
         </BrowserRouter>

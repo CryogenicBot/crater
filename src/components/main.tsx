@@ -4,26 +4,15 @@ import CalendarBar from './calendar-bar';
 import StatsColumn from './stats-column';
 import InputColumn from './input-column';
 
-const monthList: string[] = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec'
-];
+export interface MainProps {
+  monthList: string[];
+}
 
-class Main extends React.Component {
+class Main extends React.Component<MainProps, {}> {
   render() {
     return (
       <div>
-        <CalendarBar months={monthList} />
+        <CalendarBar months={this.props.monthList} />
         <div className="content-container">
           <div className="left-column">
             <InputColumn
