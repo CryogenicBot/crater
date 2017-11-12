@@ -35,9 +35,25 @@ class InputColumn extends React.Component<InputProps, InputState> {
   }
 
   handleMoneyChange(event: React.FormEvent<HTMLInputElement>) {
-    this.setState({
-      value: event.currentTarget.value
-    });
+    let strNum: string = event.currentTarget.value;
+    if (strNum.length <= 10) {
+      if (strNum === '') {
+        this.setState({ value: '' }); // initial state
+      } else {
+        if (strNum === '0' || strNum === '0.0' || strNum === '0.00') {
+          this.setState({ value: '' });
+        } else {
+          strNum = strNum.replace('.', '');
+          let num: number = parseFloat(strNum);
+          if (num === undefined || num === null || isNaN(num)) {
+            this.setState({ value: '' });
+          } else {
+            strNum = (num / 100).toFixed(2);
+            this.setState({ value: strNum });
+          }
+        }
+      }
+    }
   }
 
   render() {
