@@ -1,6 +1,7 @@
 import * as React from 'react';
 import '../styles/input-column.css';
 import ResultList from './result-list';
+import { ResultListProps } from './result-list';
 
 export interface InputState {
   category: string;
@@ -10,7 +11,24 @@ export interface InputState {
 export interface InputProps {
   categoryPlaceholder: string;
   valuePlaceholder: string;
+  selectedCategory: string;
 }
+
+const results: ResultListProps = {
+  results: [
+    'Food', 
+    'Utilities', 
+    'Other',
+    'Entertainment',
+    'Example',
+    'Example2',
+    'Example3',
+    'Example4',
+    'Example2',
+    'Example2',
+    'Example2',
+  ]
+};
 
 class InputColumn extends React.Component<InputProps, InputState> {
   constructor(props: InputProps) {
@@ -69,7 +87,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
             placeholder={this.props.categoryPlaceholder}
             onChange={this.handleCategoryChange}
           />
-          <ResultList />
+          <ResultList {...results}/>
         </label>
         <label className="labels">
           How much?
