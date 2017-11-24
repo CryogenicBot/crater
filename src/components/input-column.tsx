@@ -12,6 +12,7 @@ export interface InputProps {
   categoryPlaceholder: string;
   valuePlaceholder: string;
   selectedCategory: string;
+  changeCategoryText: Function;
 }
 
 const results: ResultListProps = {
@@ -50,6 +51,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
     this.setState({
       category: event.currentTarget.value
     });
+    this.props.changeCategoryText(this.state.category);
   }
 
   handleMoneyChange(event: React.FormEvent<HTMLInputElement>) {
@@ -83,7 +85,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
             name="categorySpentIn"
             className="inputs"
             type="text"
-            value={this.state.category}
+            value={this.props.selectedCategory !== '' ? this.props.selectedCategory : this.state.category}
             placeholder={this.props.categoryPlaceholder}
             onChange={this.handleCategoryChange}
           />

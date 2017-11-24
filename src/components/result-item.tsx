@@ -3,6 +3,7 @@ import '../styles/result-item.css';
 
 export interface ResultItemProps {
   result: string;
+  chooseCategory: Function;
 }
 
 class ResultItem extends React.Component<ResultItemProps, {}> {
@@ -11,7 +12,14 @@ class ResultItem extends React.Component<ResultItemProps, {}> {
   }
 
   render() {
-    return <p className="result-item">{this.props.result}</p>;
+    return (
+      <p
+        onClick={() => this.props.chooseCategory(this.props.result)}
+        className="result-item"
+      >
+        {this.props.result}
+      </p>
+    );
   }
 }
 

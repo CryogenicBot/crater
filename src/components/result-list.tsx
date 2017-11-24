@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '../styles/result-list.css';
-import ResultItem from './result-item';
+import ResultItemLink from './result-item-link';
 
 export interface ResultListProps {
   results: string[];
@@ -15,7 +15,7 @@ class ResultList extends React.Component<ResultListProps, {}> {
     return (
       <div className="result-list-active">
         {this.props.results.map(elem => {
-          return <ResultItem key={elem} result={elem} />;
+          return <ResultItemLink key={elem} result={elem} />;
         })}
       </div>
     );

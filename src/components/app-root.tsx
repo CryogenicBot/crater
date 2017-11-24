@@ -11,7 +11,10 @@ import rootReducer from '../reducers/root-reducer';
 
 export interface AppState {
   selectedMonth: string;
-  selectedCategory: string;
+  category: {
+    selectedCategory: string;
+    categoryText: string;
+  };
 }
 
 const monthList: string[] = [
@@ -31,7 +34,10 @@ const monthList: string[] = [
 
 const initialState: AppState = {
   selectedMonth: monthList[new Date().getMonth()],
-  selectedCategory: ''
+  category: {
+    selectedCategory: '',
+    categoryText: '',
+  }
 };
 
 const store = createStore(rootReducer, initialState);
