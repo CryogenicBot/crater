@@ -1,11 +1,12 @@
 .selected-calendar-bar-month,
 .calendar-bar-month {
   list-style-type: none;
-  flex: 0 0 6.5em;
+  flex: 0 0 8.5em;
   padding-top: 2em;
   padding-bottom: 2em;
   text-align: center;
   border-radius: 0.2em;
+  cursor: pointer;
   transition: border-bottom ease-out 0.2s, background-color ease-out 0.2s,
     padding-bottom ease-out 0.2s;
 }

@@ -1,7 +1,6 @@
 import * as React from 'react';
 import '../styles/input-column.css';
-import ResultList from './result-list';
-import { ResultListProps } from './result-list';
+import ResultListLink from './result-list-link';
 
 export interface InputState {
   category: string;
@@ -15,21 +14,16 @@ export interface InputProps {
   changeCategoryText: Function;
 }
 
-const results: ResultListProps = {
-  results: [
-    'Food', 
-    'Utilities', 
-    'Other',
-    'Entertainment',
-    'Example',
-    'Example2',
-    'Example3',
-    'Example4',
-    'Example2',
-    'Example2',
-    'Example2',
-  ]
-};
+const mockResults: string[] = [
+  'Food',
+  'Utilities',
+  'Other',
+  'Entertainment',
+  'Example',
+  'Example2',
+  'Example3',
+  'Example4'
+];
 
 class InputColumn extends React.Component<InputProps, InputState> {
   constructor(props: InputProps) {
@@ -51,7 +45,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
     this.setState({
       category: event.currentTarget.value
     });
-    this.props.changeCategoryText(this.state.category);
+    this.props.changeCategoryText(event.currentTarget.value);
   }
 
   handleMoneyChange(event: React.FormEvent<HTMLInputElement>) {
@@ -89,7 +83,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
             placeholder={this.props.categoryPlaceholder}
             onChange={this.handleCategoryChange}
           />
-          <ResultList {...results}/>
+          <ResultListLink results={mockResults} />
         </label>
         <label className="labels">
           How much?

@@ -4,6 +4,7 @@ import ResultItemLink from './result-item-link';
 
 export interface ResultListProps {
   results: string[];
+  categoryText: string;
 }
 
 class ResultList extends React.Component<ResultListProps, {}> {
@@ -15,6 +16,12 @@ class ResultList extends React.Component<ResultListProps, {}> {
     return (
       <div className="result-list-active">
         {this.props.results.map(elem => {
+          if (this.props.categoryText !== '') {
+            if(elem.toLowerCase().startsWith(this.props.categoryText.toLowerCase()))
+              return <ResultItemLink key={elem} result={elem} />;
+            else
+              return null;
+          }
           return <ResultItemLink key={elem} result={elem} />;
         })}
       </div>
