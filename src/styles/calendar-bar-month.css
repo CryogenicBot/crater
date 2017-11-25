@@ -1,9 +1,9 @@
 .selected-calendar-bar-month,
 .calendar-bar-month {
   list-style-type: none;
-  flex: 0 0 8.5em;
-  padding-top: 2em;
-  padding-bottom: 2em;
+  flex: 0 0 5.5em;
+  padding-top: 1.5em;
+  padding-bottom: 1.5em;
   text-align: center;
   border-radius: 0.2em;
   cursor: pointer;
@@ -12,7 +12,7 @@
 }
 
 .selected-calendar-bar-month {
-  padding-bottom: 1.6em;
+  padding-bottom: 1.1em;
   border-bottom: 0.4em solid red;
 }
 

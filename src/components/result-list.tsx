@@ -14,13 +14,18 @@ class ResultList extends React.Component<ResultListProps, {}> {
 
   render() {
     return (
-      <div className="result-list-active">
+      <div className={this.props.categoryText !== '' ? 'result-list-active' : 'result-list-inactive'}>
         {this.props.results.map(elem => {
           if (this.props.categoryText !== '') {
-            if(elem.toLowerCase().startsWith(this.props.categoryText.toLowerCase()))
+            if (
+              elem
+                .toLowerCase()
+                .startsWith(this.props.categoryText.toLowerCase())
+            ) {
               return <ResultItemLink key={elem} result={elem} />;
-            else
+            } else {
               return null;
+            }
           }
           return <ResultItemLink key={elem} result={elem} />;
         })}

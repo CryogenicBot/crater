@@ -15,13 +15,16 @@ class CalendarBar extends Component<CalendarProps, {}> {
 
   render() {
     return (
-      <div className="calendar-container">
-        <CalendarBarYear />
-        <ul className="calendar-list">
-          {this.props.months.map(month => {
-            return <CalendarBarMonthLink key={month} month={month} />;
-          })}
-        </ul>
+      <div>
+        <button className="toggle-button">Toggle Calendar</button>
+        <div className="calendar-container">
+          <CalendarBarYear />
+          <ul className="calendar-list">
+            {this.props.months.map(month => {
+              return <CalendarBarMonthLink key={month} month={month} />;
+            })}
+          </ul>
+        </div>
       </div>
     );
   }

@@ -1,15 +1,16 @@
 .input-form {
-  margin: 2em;
+  margin-top: 1em;
   display: flex;
   flex-flow: column;
   align-items: center;
 }
 
 .submit-button {
-  margin: 5em 1em 1em 1em;
-  min-width: 6em;
-  min-height: 6em;
-  border-radius: 6em;
+  margin: 1.5em 1em 1em 1em;
+  min-width: 10em;
+  min-height: 3.5em;
+  border-radius: 0.4em;
+  font-size: medium;
   outline: none;
   border: 1px solid black;
   cursor: pointer;
@@ -25,9 +26,9 @@
 }
 
 .inputs {
-  margin-top: 2em;
+  margin-top: 0.5em;
   padding: 1em;
-  border-radius: 2em;
+  border-radius: 0.4em;
   border: 1px solid black;
   transition: border ease-in-out 0.2s, box-shadow ease-in-out 0.2s;
   outline: none;
@@ -35,7 +36,7 @@
 
 .labels {
   font-size: medium;
-  margin-top: 3em;
+  margin-top: 1em;
   display: flex;
   flex-flow: column;
 }

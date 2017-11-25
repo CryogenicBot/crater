@@ -1,6 +1,7 @@
 import * as React from 'react';
 import '../styles/input-column.css';
 import ResultListLink from './result-list-link';
+import CalendarBar from './calendar-bar';
 
 export interface InputState {
   category: string;
@@ -12,6 +13,7 @@ export interface InputProps {
   valuePlaceholder: string;
   selectedCategory: string;
   changeCategoryText: Function;
+  monthList: string[];
 }
 
 const mockResults: string[] = [
@@ -72,32 +74,40 @@ class InputColumn extends React.Component<InputProps, InputState> {
 
   render() {
     return (
-      <form className="input-form" onSubmit={this.handleSubmit}>
-        <label className="labels">
-          Where?
-          <input
-            name="categorySpentIn"
-            className="inputs"
-            type="text"
-            value={this.props.selectedCategory !== '' ? this.props.selectedCategory : this.state.category}
-            placeholder={this.props.categoryPlaceholder}
-            onChange={this.handleCategoryChange}
-          />
-          <ResultListLink results={mockResults} />
-        </label>
-        <label className="labels">
-          How much?
-          <input
-            name="moneySpent"
-            className="inputs"
-            type="text"
-            value={this.state.value}
-            placeholder={this.props.valuePlaceholder}
-            onChange={this.handleMoneyChange}
-          />
-        </label>
-        <input className="submit-button" type="submit" value="SUBMIT" />
-      </form>
+      <div>
+        <CalendarBar months={this.props.monthList} />
+        <form className="input-form" onSubmit={this.handleSubmit}>
+          <label className="labels">
+            Where?
+            <input
+              name="categorySpentIn"
+              className="inputs"
+              type="text"
+              value={
+                this.props.selectedCategory !== ''
+                  ? this.props.selectedCategory
+                  : this.state.category
+              }
+              placeholder={this.props.categoryPlaceholder}
+              onChange={this.handleCategoryChange}
+              autoComplete={'off'}
+            />
+            <ResultListLink results={mockResults} />
+          </label>
+          <label className="labels">
+            How much?
+            <input
+              name="moneySpent"
+              className="inputs"
+              type="text"
+              value={this.state.value}
+              placeholder={this.props.valuePlaceholder}
+              onChange={this.handleMoneyChange}
+            />
+          </label>
+          <input className="submit-button" type="submit" value="Submit" />
+        </form>
+      </div>
     );
   }
 }

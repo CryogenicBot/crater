@@ -9,10 +9,14 @@ body {
 .content-container {
   display: flex;
   flex-flow: row;
+  min-width: 355px;
 }
 
 .left-column {
   flex: 1 1 0;
+  max-width: 400px;
+  min-width: 355px;
+  margin: 2em;
 }
 
 .right-column {
@@ -23,6 +27,7 @@ body {
   .content-container {
     display: flex;
     flex-flow: column;
+    align-items: center;
   }
 
   .left-column {
