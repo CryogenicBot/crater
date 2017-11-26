@@ -54,16 +54,16 @@
 }
 
 #calendar-bar-container {
-  transition: max-height 0.2s ease-in-out;
+  transition: max-height 0.3s ease-in-out;
+  overflow: hidden;
 }
 
 .calendar-bar-container-active {
-  max-height: 15em;
+  max-height: 20em;
 }
 
 .calendar-bar-container-inactive {
   max-height: 0;
-  overflow: hidden;
 }
 
 .calendar-list {
