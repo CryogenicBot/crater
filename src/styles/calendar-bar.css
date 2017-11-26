@@ -1,16 +1,76 @@
-.toggle-button {
-  padding: 2em;
-  font-size: medium;
+.toggle-button-container-active,
+.toggle-button-container-inactive {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+  width: 100%;
+  cursor: pointer;
+}
+
+.toggle-button-container-active {
+  padding-top: 2em;
+  padding-bottom: 0em;
+}
+
+.toggle-button-container-inactive {
+  padding-bottom: 2em;
+  padding-top: 0em;
+}
+
+#toggle-button {
+  border-right: 0.1em solid black;
+  border-bottom: 0.1em solid black;
+  padding: 1em;
+  width: 1em;
+  height: 1em;
+  transform: rotate(45deg);
+  transition: 0.15s ease-in-out border-width, 0.15s ease-in-out padding;
+}
+
+.toggle-button-container-inactive:hover #toggle-button {
+  border-right-width: 0.25em;
+  border-bottom-width: 0.25em;
+  padding-top: 0.85em;
+  padding-left: 0.85em;
+}
+
+.toggle-button-container-active #toggle-button {
+  border: none;
+  border-left: 0.1em solid black;
+  border-top: 0.1em solid black;
+}
+
+.toggle-button-container-active:hover #toggle-button {
+  border-left-width: 0.25em;
+  border-top-width: 0.25em;
+  padding-right: 0.85em;
+  padding-bottom: 0.85em;
 }
 
 .calendar-container {
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
 
+#calendar-bar-container {
+  transition: max-height 0.2s ease-in-out;
+}
+
+.calendar-bar-container-active {
+  max-height: 15em;
+}
+
+.calendar-bar-container-inactive {
+  max-height: 0;
+  overflow: hidden;
 }
 
 .calendar-list {
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
+  min-width: 360px;
   padding: 0;
   margin: 0;
 }

@@ -8,16 +8,46 @@ export interface CalendarProps {
   months: string[];
 }
 
-class CalendarBar extends Component<CalendarProps, {}> {
+interface CalendarState {
+  active: boolean;
+}
+
+class CalendarBar extends Component<CalendarProps, CalendarState> {
   constructor(props: CalendarProps) {
     super(props);
+    this.toggleCalendar = this.toggleCalendar.bind(this);
+    this.state = {
+      active: false
+    };
+  }
+
+  toggleCalendar() {
+    this.setState({
+      active: !this.state.active
+    });
   }
 
   render() {
     return (
-      <div>
-        <button className="toggle-button">Toggle Calendar</button>
-        <div className="calendar-container">
+      <div className="calendar-container">
+        <div
+          className={
+            this.state.active
+              ? 'toggle-button-container-active'
+              : 'toggle-button-container-inactive'
+          }
+          onClick={this.toggleCalendar}
+        >
+          <div id="toggle-button" />
+        </div>
+        <div
+          id="calendar-bar-container"
+          className={
+            this.state.active
+              ? 'calendar-bar-container-active'
+              : 'calendar-bar-container-inactive'
+          }
+        >
           <CalendarBarYear />
           <ul className="calendar-list">
             {this.props.months.map(month => {
