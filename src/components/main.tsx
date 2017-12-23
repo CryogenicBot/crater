@@ -7,25 +7,9 @@ export interface MainProps {
   monthList: string[];
 }
 
-let data: any = {};
-
 class Main extends React.Component<MainProps, {}> {
   constructor(props: MainProps) {
     super(props);
-    var myHeaders: Headers = new Headers({
-      'Content-Type': 'application/json',
-      'Accept': 'application/json'
-    });
-    fetch('/api', {
-      headers: myHeaders
-    })
-      .then(function(response: any) {
-        return response.json();
-      })
-      .then(function(json: JSON) {
-        data = json;
-        console.log(data);
-      });
   }
 
   render() {
@@ -40,7 +24,7 @@ class Main extends React.Component<MainProps, {}> {
             />
           </div>
           <div className="right-column">
-            <StatsColumn data={data} />
+            <StatsColumn url={'/api'} />
           </div>
         </div>
       </div>
