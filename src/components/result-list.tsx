@@ -3,8 +3,7 @@ import '../styles/result-list.css';
 import ResultItemLink from './result-item-link';
 
 export interface ResultListProps {
-  results: string[];
-  categoryText: string;
+  filteredCategories: string[];
 }
 
 class ResultList extends React.Component<ResultListProps, {}> {
@@ -14,19 +13,14 @@ class ResultList extends React.Component<ResultListProps, {}> {
 
   render() {
     return (
-      <div className={this.props.categoryText !== '' ? 'result-list-active' : 'result-list-inactive'}>
-        {this.props.results.map(elem => {
-          if (this.props.categoryText !== '') {
-            if (
-              elem
-                .toLowerCase()
-                .startsWith(this.props.categoryText.toLowerCase())
-            ) {
-              return <ResultItemLink key={elem} result={elem} />;
-            } else {
-              return null;
-            }
-          }
+      <div
+        className={
+          this.props.filteredCategories.length === 0
+            ? 'result-list-inactive'
+            : 'result-list-active'
+        }
+      >
+        {this.props.filteredCategories.map(elem => {
           return <ResultItemLink key={elem} result={elem} />;
         })}
       </div>

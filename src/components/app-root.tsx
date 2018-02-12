@@ -14,7 +14,13 @@ export interface AppState {
   category: {
     selectedCategory: string;
     categoryText: string;
+    allCategories: string[];
+    filteredCategories: string[];
   };
+  data: {
+    category: string;
+    value: number;
+  }[];
 }
 
 const monthList: string[] = [
@@ -37,7 +43,10 @@ const initialState: AppState = {
   category: {
     selectedCategory: '',
     categoryText: '',
-  }
+    allCategories: [],
+    filteredCategories: []
+  },
+  data: [],
 };
 
 const store = createStore(rootReducer, initialState);

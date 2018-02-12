@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { VictoryPie } from 'victory';
-import { Slice } from 'victory-core';
 
 export interface StatsProps {
   url: string;
@@ -59,7 +58,6 @@ class StatsColumn extends React.Component<StatsProps, StatsState> {
         data={this.state.data}
         x={d => d.category}
         y={d => d.value}
-        dataComponent={<Slice />}
       />
     );
   }

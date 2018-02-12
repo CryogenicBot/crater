@@ -4,7 +4,7 @@ import { AppState } from './app-root';
 
 function mapStateToProps(state: AppState) {
   return {
-    categoryText: state.category.categoryText,
+    filteredCategories: state.category.filteredCategories
   };
 }
 

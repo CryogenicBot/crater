@@ -13,19 +13,9 @@ export interface InputProps {
   valuePlaceholder: string;
   selectedCategory: string;
   changeCategoryText: Function;
+  submitData: Function;
   monthList: string[];
 }
-
-const mockResults: string[] = [
-  'Food',
-  'Utilities',
-  'Other',
-  'Entertainment',
-  'Example',
-  'Example2',
-  'Example3',
-  'Example4'
-];
 
 class InputColumn extends React.Component<InputProps, InputState> {
   constructor(props: InputProps) {
@@ -41,6 +31,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
 
   handleSubmit(event: React.FormEvent<HTMLFormElement>) {
     event.preventDefault();
+    this.props.submitData(this.state.category, parseFloat(this.state.value));
   }
 
   handleCategoryChange(event: React.FormEvent<HTMLInputElement>) {
@@ -92,7 +83,7 @@ class InputColumn extends React.Component<InputProps, InputState> {
               onChange={this.handleCategoryChange}
               autoComplete={'off'}
             />
-            <ResultListLink results={mockResults} />
+            <ResultListLink />
           </label>
           <label className="labels">
             How much?

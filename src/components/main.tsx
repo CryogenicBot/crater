@@ -1,6 +1,6 @@
 import '../styles/main.css';
 import * as React from 'react';
-import StatsColumn from './stats-column';
+import RightColumnLink from './right-column-link';
 import InputColumnLink from './input-column-link';
 
 export interface MainProps {
@@ -24,7 +24,7 @@ class Main extends React.Component<MainProps, {}> {
             />
           </div>
           <div className="right-column">
-            <StatsColumn url={'/api'} />
+            <RightColumnLink />
           </div>
         </div>
       </div>
