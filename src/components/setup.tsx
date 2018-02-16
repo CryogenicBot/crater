@@ -1,21 +1,16 @@
-import '../styles/main.css';
 import * as React from 'react';
-import RightColumnLink from './right-column-link';
-import InputColumnLink from './input-column-link';
 
-export interface MainProps {
-  monthList: string[];
-}
-
-class Main extends React.Component<MainProps, {}> {
-  constructor(props: MainProps) {
+class Setup extends React.Component<{}, {}> {
+  constructor(props: {}) {
     super(props);
   }
 
   render() {
     return (
-      <div className="content-container">
-        <div className="left-column">
+      <div className="setup-container">
+        What is your yearly salary?
+        <input type="number"/>
+        {/* <div className="left-column">
           <InputColumnLink
             categoryPlaceholder={'What did you spend your money on?'}
             valuePlaceholder={'How much did you spend?'}
@@ -24,10 +19,10 @@ class Main extends React.Component<MainProps, {}> {
         </div>
         <div className="right-column">
           <RightColumnLink />
-        </div>
+        </div> */}
       </div>
     );
   }
 }
 
-export default Main;
+export default Setup;
