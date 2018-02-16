@@ -33,7 +33,7 @@ export function chooseCategory(selectedCategory: string) {
   return action;
 }
 
-export function submitData(category: string, value: number){
+export function submitData(category: string, value: number) {
   const action: AnyAction = {
     type: ActionList.SUBMIT_DATA,
     category,

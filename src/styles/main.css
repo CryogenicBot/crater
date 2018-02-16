@@ -18,6 +18,8 @@ body {
 
 .right-column {
   flex: 2 1 0;
+  margin-left: 3em;
+  margin-right: 3em;
 }
 
 @media all and (max-width: 800px) {

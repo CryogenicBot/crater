@@ -18,16 +18,18 @@ function selectCategory(state: CategoryState, action: AnyAction) {
 }
 
 function changeCategoryText(state: CategoryState, action: AnyAction) {
-  if(action.categoryText !== ''){
-    var filteredCategories = [...state.allCategories].filter((category) => {
-      return category.toLowerCase().startsWith(action.categoryText.toLowerCase());
+  if (action.categoryText !== '') {
+    var filteredCategories = [...state.allCategories].filter(category => {
+      return category
+        .toLowerCase()
+        .startsWith(action.categoryText.toLowerCase());
     });
     return {
       selectedCategory: '',
       categoryText: action.categoryText,
       allCategories: state.allCategories,
       filteredCategories: filteredCategories
-    }
+    };
   }
   return {
     selectedCategory: '',

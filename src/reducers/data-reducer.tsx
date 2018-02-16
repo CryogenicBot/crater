@@ -9,9 +9,7 @@ function submitData(
   var category: string = action.category;
   var value: number = action.value;
   newData.push({ category: category, value: value });
-  console.log(newData);
   return newData;
-  
 }
 
 function dataReducer(
