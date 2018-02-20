@@ -3,15 +3,23 @@ import * as React from 'react';
 import RightColumnLink from './right-column-link';
 import InputColumnLink from './input-column-link';
 
-export interface MainProps {
-  monthList: string[];
-}
+const monthList: string[] = [
+  'Jan',
+  'Feb',
+  'Mar',
+  'Apr',
+  'May',
+  'Jun',
+  'Jul',
+  'Aug',
+  'Sep',
+  'Oct',
+  'Nov',
+  'Dec'
+];
 
-class Main extends React.Component<MainProps, {}> {
-  constructor(props: MainProps) {
-    super(props);
-  }
-
+class Main extends React.Component<{}, {}> {
+  
   render() {
     return (
       <div className="content-container">
@@ -19,7 +27,7 @@ class Main extends React.Component<MainProps, {}> {
           <InputColumnLink
             categoryPlaceholder={'What did you spend your money on?'}
             valuePlaceholder={'How much did you spend?'}
-            monthList={this.props.monthList}
+            monthList={monthList}
           />
         </div>
         <div className="right-column">

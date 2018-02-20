@@ -4,5 +4,5 @@ import Main from '../components/main';
 
 it('renders without crashing', () => {
   const div = document.createElement('div');
-  ReactDOM.render(<Main monthList={['Jan']}/>, div);
+  ReactDOM.render(<Main />, div);
 });

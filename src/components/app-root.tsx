@@ -6,6 +6,7 @@ import { createStore } from 'redux';
 import Loadable from 'react-loadable';
 
 import Setup from './setup';
+import Main from './main';
 import Loading from './general/loading';
 import rootReducer from '../reducers/root-reducer';
 
@@ -57,9 +58,6 @@ const PageDoesNotExist = Loadable({
 });
 
 class AppRoot extends Component {
-  constructor() {
-    super();
-  }
 
   render() {
     return (
@@ -67,6 +65,7 @@ class AppRoot extends Component {
         <BrowserRouter>
           <Switch>
             <Route exact={true} path="/" component={() => <Setup />}/>
+            <Route exact={true} path="/budget/:amt" component={() => <Main />}/>
             <Route component={PageDoesNotExist} />
           </Switch>
         </BrowserRouter>
