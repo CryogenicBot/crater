@@ -1,6 +1,6 @@
 import * as React from 'react';
 import '../styles/input-table.css';
-import { Search } from 'semantic-ui-react';
+import { Search, Input, Label } from 'semantic-ui-react';
 import _ from 'lodash';
 import { SearchResultProps, SearchProps, SearchResultData } from 'semantic-ui-react';
 // import ResultListLink from './result-list-link';
@@ -10,6 +10,7 @@ export interface InputTableState {
   isLoading: boolean;
   value: string | undefined;
   results: SearchResultProps[];
+  budgetAmt: number | string;  
 }
 /*
 export interface InputProps {
@@ -27,7 +28,7 @@ const source: string[] = ['Food', 'Car', 'Phone'];
 class InputTable extends React.Component<{}, InputTableState> {
   constructor(props: {}) {
     super(props);
-    this.state = { isLoading: false, results: [], value: '' };
+    this.state = { isLoading: false, results: [], value: '', budgetAmt: '' };
     // this.handleSubmit = this.handleSubmit.bind(this);
     // this.handleCategoryChange = this.handleCategoryChange.bind(this);
     // this.handleMoneyChange = this.handleMoneyChange.bind(this);
@@ -37,6 +38,15 @@ class InputTable extends React.Component<{}, InputTableState> {
     this.resetComponent();
   }
 
+  handleBudgetChange = (event: React.FormEvent<HTMLInputElement>) => {
+    let amount: string = event.currentTarget.value;
+    if (amount === '') {
+      this.setState({ budgetAmt: '' });
+    } else {
+      this.setState({ budgetAmt: parseFloat(event.currentTarget.value) });
+    }
+  }
+
   resetComponent = () =>
     this.setState({ isLoading: false, results: [], value: '' });
 
@@ -44,7 +54,6 @@ class InputTable extends React.Component<{}, InputTableState> {
     event: React.MouseEvent<HTMLDivElement>,
     data: SearchResultData
   ) => {
-    console.log(data.result.title);
     this.setState({ value: data.result.title });
   }
 
@@ -72,14 +81,32 @@ class InputTable extends React.Component<{}, InputTableState> {
     const { isLoading, value, results } = this.state;
     console.log(results);
     return (
+      <div id="input-table-container">
       <Search
+        className="search-bar"
+        id="search-bar"
         loading={isLoading}
         onResultSelect={this.handleResultSelect}
         onSearchChange={this.handleSearchChange}
         results={results}
         value={value}
-        {...this.props}
+        {...this.props} 
       />
+      <Input
+      className="input-bar"
+      id="input-bar"
+      labelPosition="right"
+      type="number"
+      placeholder="Amount"
+      step={10}
+      onChange={this.handleBudgetChange}
+      value={this.state.budgetAmt}
+    >
+      <Label basic={true}>$</Label>
+      <input />
+      <Label>.00</Label>
+    </Input>
+    </div>
     );
   }
 }

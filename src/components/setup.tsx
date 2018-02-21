@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {
   Card,
-  /* Icon, Image */ Input,
+  Input,
   Label,
   Button
 } from 'semantic-ui-react';

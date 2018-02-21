@@ -1,0 +1,13 @@
+#search-bar, #input-bar {
+    border-radius: 0.2857rem;
+    flex: 1;
+}
+
+#input-table-container {
+    display: flex;
+}
+
+
+.search-bar, .input-bar {
+    margin: 0.5rem;
+}
