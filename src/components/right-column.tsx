@@ -19,7 +19,7 @@ class RightColumn extends React.Component<RightColumnProps, RightColumnState> {
 
   render() {
     return (
-      <VictoryPie data={this.props.data} x={d => d.category} y={d => d.value} />
+      <VictoryPie colorScale="qualitative" data={this.props.data} x={d => d.category} y={d => d.value} />
     );
   }
 }

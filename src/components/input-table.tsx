@@ -2,17 +2,14 @@ import * as React from 'react';
 import '../styles/input-table.css';
 import { Search } from 'semantic-ui-react';
 import _ from 'lodash';
-import {
-  SearchProps,
-  SearchResultData
-} from 'semantic-ui-react/dist/commonjs/modules/Search/Search';
+import { SearchResultProps, SearchProps, SearchResultData } from 'semantic-ui-react';
 // import ResultListLink from './result-list-link';
 // import CalendarBar from './calendar-bar';
 
 export interface InputTableState {
   isLoading: boolean;
   value: string | undefined;
-  results: {title: string}[];
+  results: SearchResultProps[];
 }
 /*
 export interface InputProps {
@@ -67,7 +64,7 @@ class InputTable extends React.Component<{}, InputTableState> {
         isLoading: false,
         results: _.filter(source, isMatch).map((item: string) => {return {title: item}; })
       });
-    }, 500);
+    }, 0);
   };
 
   render() {
