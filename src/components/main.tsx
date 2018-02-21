@@ -1,9 +1,10 @@
 import '../styles/main.css';
 import * as React from 'react';
 import RightColumnLink from './right-column-link';
-import InputColumnLink from './input-column-link';
+import InputTable from './input-table';
+// import InputColumnLink from './input-column-link';
 
-const monthList: string[] = [
+/* const monthList: string[] = [
   'Jan',
   'Feb',
   'Mar',
@@ -16,7 +17,7 @@ const monthList: string[] = [
   'Oct',
   'Nov',
   'Dec'
-];
+]; */
 
 class Main extends React.Component<{}, {}> {
   
@@ -24,11 +25,7 @@ class Main extends React.Component<{}, {}> {
     return (
       <div className="content-container">
         <div className="left-column">
-          <InputColumnLink
-            categoryPlaceholder={'What did you spend your money on?'}
-            valuePlaceholder={'How much did you spend?'}
-            monthList={monthList}
-          />
+          <InputTable />
         </div>
         <div className="right-column">
           <RightColumnLink />

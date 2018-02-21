@@ -25,7 +25,6 @@ class Setup extends React.Component<{}, SetupState> {
   }
 
   handleBudgetChange(event: React.FormEvent<HTMLInputElement>) {
-    console.log(event.currentTarget.value);
     let amount: string = event.currentTarget.value;
     if (amount === '') {
       this.setState({ budgetAmt: '' });
@@ -68,20 +67,6 @@ class Setup extends React.Component<{}, SetupState> {
           </Card.Content>
         </Card>
       </div>
-      // <div className="setup-container">
-      //   What is your yearly salary?
-      //   <input type="number"/>
-      //   {/* <div className="left-column">
-      //     <InputColumnLink
-      //       categoryPlaceholder={'What did you spend your money on?'}
-      //       valuePlaceholder={'How much did you spend?'}
-      //       monthList={this.props.monthList}
-      //     />
-      //   </div>
-      //   <div className="right-column">
-      //     <RightColumnLink />
-      //   </div> */}
-      // </div>
     );
   }
 }
