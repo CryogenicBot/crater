@@ -44,7 +44,8 @@ class InputTable extends React.Component<{}, InputTableState> {
     event: React.MouseEvent<HTMLDivElement>,
     data: SearchResultData
   ) => {
-    this.setState({ value: data.result });
+    console.log(data.result.title);
+    this.setState({ value: data.result.title });
   }
 
   handleSearchChange = (
