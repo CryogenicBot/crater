@@ -5,7 +5,7 @@ import dataReducer from './data-reducer';
 
 const rootReducer = combineReducers({
   selectedMonth: monthReducer,
-  category: categoryReducer,
+  categories: categoryReducer,
   data: dataReducer
 });
 

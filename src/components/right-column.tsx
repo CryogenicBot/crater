@@ -1,5 +1,7 @@
 import * as React from 'react';
 import { VictoryPie } from 'victory';
+import { connect } from 'react-redux';
+import { AppState } from './app-root';
 
 export interface RightColumnProps {
   data: {
@@ -24,4 +26,10 @@ class RightColumn extends React.Component<RightColumnProps, RightColumnState> {
   }
 }
 
-export default RightColumn;
+function mapStateToProps(state: AppState) {
+  return {
+    data: state.data,
+  };
+}
+
+export default connect(mapStateToProps)(RightColumn);

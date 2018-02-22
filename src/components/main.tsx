@@ -1,23 +1,7 @@
 import '../styles/main.css';
 import * as React from 'react';
-import RightColumnLink from './right-column-link';
+import RightColumn from './right-column';
 import InputTable from './input-table';
-// import InputColumnLink from './input-column-link';
-
-/* const monthList: string[] = [
-  'Jan',
-  'Feb',
-  'Mar',
-  'Apr',
-  'May',
-  'Jun',
-  'Jul',
-  'Aug',
-  'Sep',
-  'Oct',
-  'Nov',
-  'Dec'
-]; */
 
 class Main extends React.Component<{}, {}> {
   
@@ -28,7 +12,7 @@ class Main extends React.Component<{}, {}> {
           <InputTable />
         </div>
         <div className="right-column">
-          <RightColumnLink />
+          <RightColumn />
         </div>
       </div>
     );

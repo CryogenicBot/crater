@@ -10,18 +10,15 @@ import Main from './main';
 import Loading from './general/loading';
 import rootReducer from '../reducers/root-reducer';
 
+export interface BudgetData {
+  category: string;
+  value: number;
+}
+
 export interface AppState {
   selectedMonth: string;
-  category: {
-    selectedCategory: string;
-    categoryText: string;
-    allCategories: string[];
-    filteredCategories: string[];
-  };
-  data: {
-    category: string;
-    value: number;
-  }[];
+  categories: string[];
+  data: BudgetData[];
 }
 
 const monthList: string[] = [
@@ -41,12 +38,7 @@ const monthList: string[] = [
 
 const initialState: AppState = {
   selectedMonth: monthList[new Date().getMonth()],
-  category: {
-    selectedCategory: '',
-    categoryText: '',
-    allCategories: [],
-    filteredCategories: []
-  },
+  categories: ['Food', 'Car', 'Phone', 'OSAP', 'Rent'],
   data: [],
 };
 

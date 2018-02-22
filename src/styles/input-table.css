@@ -1,13 +1,25 @@
-#search-bar, #input-bar {
-    border-radius: 0.2857rem;
-    flex: 1;
+#search-bar,
+#input-bar {
+  flex: 1;
+}
+
+#input-bar {
+  width: 7em;
+}
+
+#search-bar {
+  border-radius: 0.2857em;
 }
 
 #input-table-container {
-    display: flex;
+  display: flex;
 }
 
+#add-button, #submit-button, #data-table {
+  margin: 0.5em;
+}
 
-.search-bar, .input-bar {
-    margin: 0.5rem;
+.search-bar,
+.input-bar {
+  margin: 0.5em;
 }
